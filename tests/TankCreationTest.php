@@ -15,8 +15,15 @@ class TankCreationTest extends TestCase
      */
     public function testThatATankCanBeCreated()
     {
-        $tank = factory(App\Tank::class)->create();
+        $author = factory(App\User::class)->create();
+        
+        $tank = factory(App\Tank::class)->make();
 
-        $this->visit('/')->see($tank->description);
+        $this
+            ->actingAs($author)
+            ->visit('/tank/create')
+            ->submitForm('Create Tank', $tank)
+            ->visit('/tanks')
+            ->see($tank->description);
     }
 }

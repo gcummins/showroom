@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'TankController@index');
+Route::resource('/tanks', 'TankController');
