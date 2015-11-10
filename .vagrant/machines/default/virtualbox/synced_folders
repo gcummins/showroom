@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/showroom":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/showroom","hostpath":"/Users/sa-pair-2/code/seneca/showroom","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/sa-pair-2/code/seneca/showroom","disabled":false}}}
