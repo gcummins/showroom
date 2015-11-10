@@ -4,23 +4,19 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class TankTest extends TestCase
+class TankCreationTest extends TestCase
 {
     use DatabaseTransactions;
+
     /**
-     * A basic functional test example.
+     * A basic test example.
      *
      * @return void
      */
-    public function testThatTheTankSectionIsShown()
-    {
-        $this->visit('/')->see('Tanks');
-    }
-
-    public function testThatATankIsShown()
+    public function testThatATankCanBeCreated()
     {
         $tank = factory(App\Tank::class)->create();
 
-        $this->visit('/')->see($tank->description)->notSee($tank->description);
+        $this->visit('/')->see($tank->description);
     }
 }
