@@ -21,8 +21,8 @@ class TankCreationTest extends TestCase
 
         $this
             ->actingAs($author)
-            ->visit('/tank/create')
-            ->submitForm('Create Tank', $tank)
+            ->visit('/tanks/create')
+            ->submitForm('Create Tank', $tank->toArray())
             ->visit('/tanks')
             ->see($tank->description);
     }

@@ -9,4 +9,5 @@ class Status extends Model
     public function tanks() {
         return $this->hasMany('App\Tank');
     }
+
 }

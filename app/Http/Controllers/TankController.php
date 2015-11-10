@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
 use App\Tank;
+use App\Status;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +32,8 @@ class TankController extends Controller
      */
     public function create()
     {
-        //
+        $statuses = DB::table('statuses')->lists('name', 'id');
+        return view('tanks.create', compact('statuses'));
     }
 
     /**
