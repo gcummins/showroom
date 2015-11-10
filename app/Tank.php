@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class Tank extends Model
 {
+    
     public function photos()
     {
         return $this->hasMany('App\Photo');
