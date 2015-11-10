@@ -44,7 +44,8 @@ class TankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tank = Tank::create($request->except('_token'));
+        //TODO
     }
 
     /**

@@ -19,25 +19,25 @@ class CreateTanksTable extends Migration
             $table->foreign('status_id')->references('id')->on('statuses');
 
             $table->integer('year')->unsigned();
-            $table->string('make')
-            $table->string('model')
-            $table->string('dotCode')
-            $table->string('capacity')
+            $table->string('make');
+            $table->string('model');
+            $table->string('dotCode');
+            $table->string('capacity');
             $table->integer('compartments')->unsigned();
-            $table->string('bulkheads')
-            $table->string('compartmentSizes')
-            $table->string('pumps')
-            $table->string('pto')
-            $table->string('meters')
-            $table->string('spitTanks')
-            $table->string('hoseReels')
-            $table->string('deliveryHoses')
-            $table->string('nozzles')
-            $table->string('dryBreakManifold')
-            $table->string('bottomLoad')
-            $table->string('vk')
-            $table->string('ip')
-            $table->text('comments')
+            $table->string('bulkheads');
+            $table->string('compartmentSizes');
+            $table->string('pumps');
+            $table->string('pto');
+            $table->string('meters');
+            $table->string('spitTanks');
+            $table->string('hoseReels');
+            $table->string('deliveryHoses');
+            $table->string('nozzles');
+            $table->string('dryBreakManifold');
+            $table->string('bottomLoad');
+            $table->string('vk');
+            $table->string('ip');
+            $table->text('comments');
 
             $table->timestamps();
         });

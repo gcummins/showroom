@@ -12,7 +12,7 @@
 <section @click="clickTank({{ $tank->id }})">
     <img src="{{ $tank->thumbnail()->path }}">
     <span>Status: {{ $tank->status->name }}</p>
-    <p>Description: {{ $tank->description }}</p>
+    <p>Description: {{ $tank->year . " " . $tank->make . " " . $tank->capacity }}</p>
 </section>
 <hr>
 @endforeach

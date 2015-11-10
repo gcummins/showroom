@@ -22,8 +22,29 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Tank::class, function (Faker\Generator $faker) {
     return [
-        'description' => $faker->words(10,true),
         'status_id' => rand(1,4),
+
+        'year'             => $faker->year,
+        'make'             => $faker->words(2,true),
+        'model'            => $faker->words(2,true),
+        'dotCode'          => $faker->word,
+        'capacity'         => $faker->numerify('#### L'),
+        'compartments'     => $faker->words(2,true),
+        'bulkheads'        => $faker->words(2,true),
+        'compartmentSizes' => $faker->words(2,true),
+        'pumps'            => $faker->words(2,true),
+        'pto'              => $faker->words(2,true),
+        'meters'           => $faker->words(2,true),
+        'spitTanks'        => $faker->words(2,true),
+        'hoseReels'        => $faker->words(2,true),
+        'deliveryHoses'    => $faker->words(2,true),
+        'nozzles'          => $faker->words(2,true),
+        'dryBreakManifold' => $faker->words(2,true),
+        'bottomLoad'       => $faker->words(2,true),
+        'vk'               => $faker->words(2,true),
+        'ip'               => $faker->words(2,true),
+        'comments'         => $faker->paragraph(3,true),
+
     ];
 });
 
