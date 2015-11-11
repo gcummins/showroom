@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-	{!! Form::open(array('url'=>'tanks')) !!}
+	{!! Form::open(array('url'=>'tank')) !!}
 
   		{!! Form::label('status', 'Status') !!}
   		{!! Form::select('status_id', $statuses) !!}

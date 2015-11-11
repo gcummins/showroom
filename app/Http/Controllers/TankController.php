@@ -9,6 +9,7 @@ use App\Tank;
 use App\Status;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 
 class TankController extends Controller
 {
@@ -20,8 +21,6 @@ class TankController extends Controller
     public function index()
     {
         $tanks = Tank::all();
-
-
         return view('tanks', compact('tanks'));
     }
 
@@ -33,7 +32,7 @@ class TankController extends Controller
     public function create()
     {
         $statuses = DB::table('statuses')->lists('name', 'id');
-        return view('tanks.create', compact('statuses'));
+        return view('tank.create', compact('statuses'));
     }
 
     /**
@@ -45,7 +44,7 @@ class TankController extends Controller
     public function store(Request $request)
     {
         $tank = Tank::create($request->except('_token'));
-        //TODO
+        return redirect()->route('tank.show', [$tank]);
     }
 
     /**
@@ -56,7 +55,8 @@ class TankController extends Controller
      */
     public function show($id)
     {
-        //
+        $tank = Tank::findOrFail($id);
+        return view('tank.detail', compact('tank'));
     }
 
     /**

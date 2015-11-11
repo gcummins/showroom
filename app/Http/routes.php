@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'TankController@index');
-Route::resource('/tanks', 'TankController');
+Route::resource('tank', 'TankController');
+Route::get('tanks', 'TankController@index');

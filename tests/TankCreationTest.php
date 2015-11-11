@@ -13,7 +13,7 @@ class TankCreationTest extends TestCase
      *
      * @return void
      */
-    public function testThatATankCanBeCreated()
+    public function testThatATankIsCreated()
     {
         $author = factory(App\User::class)->create();
 
@@ -21,8 +21,39 @@ class TankCreationTest extends TestCase
 
         $this
             ->actingAs($author)
-            ->visit('/tanks/create')
+            ->visit('/tank/create')
             ->submitForm('Create Tank', $tank->toArray())
+            ->seeInDatabase('tanks', $tank->toArray());
+    }
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testThatTankDetailsAreViewable()
+    {
+        $author = factory(App\User::class)->create();
+
+        $tank = factory(App\Tank::class)->create();
+
+        $this
+            ->visit('/tank/' . $tank->id)
+            ->see($tank->year . " " . $tank->make . " " . $tank->capacity);
+    }
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testThatATankAppearsInTheTankCategory()
+    {
+        $author = factory(App\User::class)->create();
+
+        $tank = factory(App\Tank::class)->create();
+
+        $this
             ->visit('/tanks')
             ->see($tank->year . " " . $tank->make . " " . $tank->capacity);
     }

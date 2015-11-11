@@ -45,7 +45,6 @@ $factory->define(App\Tank::class, function (Faker\Generator $faker)
         'vk'               => $faker->words(2, true),
         'ip'               => $faker->words(2, true),
         'comments'         => $faker->paragraph(3, true),
-
     ];
 });
 
