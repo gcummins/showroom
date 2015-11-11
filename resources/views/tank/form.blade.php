@@ -1,5 +1,3 @@
-{{ dd( $statuses )}}
-
 {!! Form::label('status', 'Status') !!}
 {!! Form::select('status_id', $statuses) !!}
 
