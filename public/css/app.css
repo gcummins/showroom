@@ -1,4 +1,29 @@
-section {
-  cursor: pointer; }
+body {
+  font-family: Verdana, sans;
+  font-size: 90%; }
+
+.tank-row {
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: left;
+  -ms-flex-align: left;
+  align-items: left; }
+
+.tank-row img {
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 120px;
+  height: 90px; }
+
+.tank-row .tank-description {
+  margin-left: 20px; }
+
+/*# sourceMappingURL=app.css.map */
 
 /*# sourceMappingURL=app.css.map */

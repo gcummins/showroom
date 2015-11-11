@@ -1,6 +1,25 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-section
-{
-    cursor: pointer;    
+body {
+	font-family: Verdana, sans;
+	font-size: 90%;
 }
+
+.tank-row {
+  cursor: pointer;
+  display: flex;
+  align-items: left;
+}
+
+.tank-row img {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 120px;
+	height: 90px;
+}
+
+.tank-row .tank-description {
+	margin-left: 20px;
+}
+
+/*# sourceMappingURL=app.css.map */
+

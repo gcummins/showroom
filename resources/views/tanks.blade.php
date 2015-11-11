@@ -9,11 +9,19 @@
 <h1>Tanks</h1>
 <hr>
 @foreach($tanks as $tank)
-<section @click="clickTank({{ $tank->id }})">
+<div @click="clickTank({{ $tank->id }})" class="tank-row">
     <img src="{{ $tank->thumbnail()->path }}">
-    <span>Status: {{ $tank->status->name }}</p>
-    <p>Description: {{ $tank->year . " " . $tank->make . " " . $tank->capacity }}</p>
-</section>
+    <div class="tank-description">
+        <h3>
+            {{ $tank->year . " " . $tank->make . " " . $tank->capacity }}
+            @if($tank->status->name == "new")
+                 - New!
+            @endif
+        </h3>
+        <span>Capacity: {{ $tank->capacity }}</span>
+        <p>{{ $tank->comments }}</p>
+    </div>
+</div>
 <hr>
 @endforeach
 
