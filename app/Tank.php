@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Tank extends Model
 {
 
-    protected $fillable = ['*'];
+    protected $guarded = ['id'];
 
     public function photos()
     {
@@ -28,6 +28,7 @@ class Tank extends Model
         } catch(ModelNotFoundException $e) {
             $photo = \App::make('App\Photo');
             $photo->path = "/images/missing_image.png";
+            
             return $photo;
         }
     }
