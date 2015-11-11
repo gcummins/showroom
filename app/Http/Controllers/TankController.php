@@ -31,7 +31,7 @@ class TankController extends Controller
      */
     public function create()
     {
-        $statuses = DB::table('statuses')->lists('name', 'id');
+        $statuses = Status::all()->lists('name','id');
         return view('tank.create', compact('statuses'));
     }
 
