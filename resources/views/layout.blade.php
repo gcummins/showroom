@@ -10,5 +10,7 @@
 	<div class="container">
 		@yield('content')
 	</div>
+
+	@yield('scripts.footer')
 </body>
 </html>

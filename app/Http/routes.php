@@ -14,3 +14,4 @@
 Route::get('/', 'TankController@index');
 Route::resource('tank', 'TankController');
 Route::get('tanks', 'TankController@index');
+Route::post('tank/{id}/photos', 'TankController@addPhoto');

@@ -59,6 +59,21 @@ class TankController extends Controller
         return view('tank.detail', compact('tank'));
     }
 
+    public function addPhoto($id, Request $request)
+    {
+        $tank = Tank::findOrFail($id);
+
+        $file = $request->file('file');
+
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('images/tanks', $name);
+
+        $tank->photos()->create(['path' => "/images/tanks/{$name}"]);
+
+        return "Done";
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

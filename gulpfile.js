@@ -14,6 +14,6 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix
     	.sass('app.scss')
-    	.styles(["material.min.css"])
-    	.scripts(["material.min.js"]);
+    	.styles(["material.min.css", "dropzone.css"])
+    	.scripts(["material.min.js", "dropzone.js"]);
 });
